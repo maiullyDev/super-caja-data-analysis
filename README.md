@@ -45,7 +45,14 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 ## Inspecionar Tabelas
 📌 O 1º passo foi inspecionar o banco de dados, conhecer melhor as tabelas originais, as variáveis, os tipos de dados, a quantidade de linhas, os valos nulos e duplicados etc.
 
+**Índice:**  
+[Tabela default](#️-tabela-default)  
+[Tabela loans_detail](#️-tabela-loans_detail)  
+[Tabela loans_outstanding](#️-tabela-loans_outstanding)  
+[Tabela user_info](#️-tabela-user_info)
+
 ### 🗒️ Tabela default
+---
 
 #### Insumos
 | TABELA | COLUNA | TIPO | CONTEÚDO |
@@ -61,6 +68,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 | Duplicados (user_id) | 0 |
 
 ### 🗒️ Tabela loans_detail
+---
 
 #### Insumos
 | TABELA | COLUNA | TIPO | CONTEÚDO |
@@ -80,6 +88,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 | Duplicados (user_id) | 0 |
 
 ### 🗒️ Tabela loans_outstanding
+---
 
 #### Insumos
 | TABELA | COLUNA | TIPO | CONTEÚDO |
@@ -102,6 +111,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 | loan_type | other,others, real estate, REAL ESTATE | Trocar others por other. ✅ |
 
 ### 🗒️ Tabela user_info
+---
 
 #### Insumos
 | TABELA | COLUNA | TIPO | CONTEÚDO |
@@ -128,9 +138,19 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 
 ## Novas Tabelas (Big Query)
 
-📌 Nesta seção estão informações sobre as novas tabelas e variáveis, que foram criadas a partir das tabelas originais. Aqui também estão algumas observações e ações pensadas a partir da análise dessas tabelas.
+📌 Nesta seção estão informações sobre as novas tabelas e variáveis, que foram criadas a partir das tabelas originais. Aqui também estão algumas observações e ações pensadas a partir da análise dessas tabelas.  
+
+**Índice**  
+[Tabela customers](#️-tabela-customers)  
+[Tabela total_loans_by_type](#️-tabela-total_loans_by_type)  
+[Tabela customer_info_and_total_loans](#️-tabela-customer_info_and_total_loans)  
+[Tabela customer_info_and_total_loans_notNull](#tabela-customer_info_and_total_loans_notnull)  
+[Tabelas com dados sobre taxa de inadimplência e risco relativo](#tabelas-com-dados-sobre-taxa-de-inadimplência-e-risco-relativo)  
+[Tabelas com segmentação](#tabelas-com-segmentação)  
+[Tabela table_for_the_dashboard](#tabela-table_for_the_dashboard)
 
 ### 🗒️ Tabela customers
+---
 
 📌 Tabela com informações sobre os clientes (Total de linhas: 36000): União de colunas das tabelas user_info, default e loans_detail.
 
@@ -168,6 +188,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 ⭐ Ação: Priorizar a variável more_90_days_overdue a fim de focar nos casos em que os clientes demoram mais tempo para pagar (nos casos em que os clientes são mais inadimplentes) e na variável que tem maior variabilidade de valores.  
 
 ### 🗒️ Tabela total_loans_by_type
+---
 
 📌 Tabela com informações sobre os empréstimos (Total de linhas: 35575): A tabela loans_outstanding foi usada para calcular o total de empréstimos de cada cliente.  
 
@@ -179,6 +200,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 | total_loans | INTEGER | Total de empréstimos dos 2 tipos (other e real estate) |
 
 ### 🗒️ Tabela customer_info_and_total_loans
+---
 
 📌 Tabela com informações sobre os clientes e sobre os empréstimos desses clientes (Total de linhas: 35575): União de colunas das tabelas customers e total_loans_by_type.
 
@@ -208,6 +230,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 → Mediana: 5416.0
 
 ### Tabela customer_info_and_total_loans_notNull
+---
 📌 Cópia da tabela customer_info_and_total_loans com modificações (Total de linhas: 35514)
 
 → Os valores nulos da variável last_month_salary substituídos pela mediana.  
@@ -238,6 +261,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 | debt_ratio |  |
 
 ### Tabelas com dados sobre taxa de inadimplência e risco relativo
+---
 
 📌 Tabelas com dados sobre taxa de inadimplência e dados sobre o risco relativo.
 | COLUNA | CONTEÚDO |
@@ -252,6 +276,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 | default_rate_ratio | risco relativo |
 
 ### Tabelas com segmentação
+---
 
 #### risk_score
 📌 Essa tabela contém informações da tabela customer_info_and_total_loans_notNull acrescida de informações sobre a pontuação de risco dos clientes. Para entender melhor sobre como as pontuações foram estabelecidas, ver a sessão Segmentação (especialmente a sessão Conclusões | 1ª segmentação).
@@ -301,6 +326,7 @@ O banco Super Caja precisa tomar decisões informadas sobre a quem conceder cré
 | segmentation_num | INTEGER | Segmentação entre maior risco e menor risco usando o sistema de numeração binário, sendo 0 para menor risco e 1 para maior risco. |
 
 ### Tabela table_for_the_dashboard
+---
 
 📌 Tabela feita com o propósito de ser utilizada no dashboard.  
 → O score de risco da tabela risk_score_2 foi usado como base.
