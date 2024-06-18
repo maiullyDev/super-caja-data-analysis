@@ -1,0 +1,3 @@
+group_label,lower_limit_dependents,upper_limit_dependents,total_customers,total_default,default_rate,rate_ratio
+dependents_1-,0,1,27628,430,"0,01556392066","0,6426025043"
+dependents_2+,2,13,7886,191,"0,02422013695","1,556171962"

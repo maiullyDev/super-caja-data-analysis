@@ -1,0 +1,3 @@
+group_label,lower_limit_lines,upper_limit_lines,total_customers,total_default,default_rate,rate_ratio
+using_lines_+,"0,600025395",22000,7876,568,"0,07211782631","37,60740535"
+using_lines_-,0,"0,599975053",27638,53,"0,001917649613","0,02659050766"

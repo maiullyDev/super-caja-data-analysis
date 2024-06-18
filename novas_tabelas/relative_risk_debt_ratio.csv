@@ -1,0 +1,3 @@
+group_label,lower_limit_debt_ratio,upper_limit_debt_ratio,total_customers,total_default,default_rate,rate_ratio
+debt_ratio-,0,0,723,1,"0,001383125864","0,07761343863"
+debt_ratio+,"0,0000662",60212,34791,620,"0,01782070076","12,88436665"
