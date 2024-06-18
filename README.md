@@ -3,6 +3,7 @@
 # Ficha técnica | Super Caja
 
 ## Índice
+- [Dashboard](#veja-o-dashboard)
 - [Ferramentas](#ferramentas)
 - [Caso](#caso)
 - [Objetivos](#objetivos)
@@ -14,6 +15,9 @@
 - [Regressão Logística](#regressão-logística)
 - [Análise Exploratória](#análise-exploratória)
 - [Links Importantes](#links-importantes)
+
+## Veja o Dashboard
+📍 Para acessar o dashboard do projeto, [clique aqui](https://lookerstudio.google.com/reporting/789f2de1-bc5c-4de6-878f-d3f385a91191).
 
 ## Ferramentas
 - BigQuery: Gerenciamento de dados usando a linguagem SQL.
