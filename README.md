@@ -1,4 +1,4 @@
-![Logo do banco fictício](./assets/logo_super_caja.png)
+![Logo do banco fictício](https://github.com/user-attachments/assets/18cf975a-8403-4d40-9b5a-b397f48dd056)
 
 # Ficha técnica | Super Caja
 
